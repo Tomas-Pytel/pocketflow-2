@@ -4,12 +4,13 @@ type TransactionCategory =
   | "Health"
   | "Groceries"
   | "House"
-  | "FreeTime"
-  | "Job";
+  | "Free_Time"
+  | "Job"
+  | "Transport";
 
 interface Transaction {
   id: number;
-  timestamp: string;
+  timestamp: Date;
   title: string;
   amount: number;
   type: TransactionType;
