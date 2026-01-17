@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primaryYellow: oklch(85.17% 0.174 87.04);
+  --color-primaryOrange: oklch(51.76% 0.204 30.64);
+}
+
 html,
 body {
   height: 100%;
