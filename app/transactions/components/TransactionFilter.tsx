@@ -30,7 +30,7 @@ export default function TransactionFilter({
   property,
 }: //filter,
 TransactionFilterProps) {
-  const searchParams = useSearchParams();
+  //const searchParams = useSearchParams();
 
   const [filterProp, setFilterProp] = useState<
     TransactionType | TransactionCategory | "All"
