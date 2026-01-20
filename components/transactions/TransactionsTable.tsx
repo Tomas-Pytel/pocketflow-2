@@ -1,12 +1,12 @@
 import { JSX } from "react";
-import { Transaction } from "../types";
+import { Transaction } from "../../app/transactions/types";
 import { FaHouse } from "react-icons/fa6";
 import { IoGameController } from "react-icons/io5";
 import { FaShoppingCart } from "react-icons/fa";
 import { FaCarAlt } from "react-icons/fa";
 import { FaWallet } from "react-icons/fa";
 import { FaBriefcaseMedical } from "react-icons/fa";
-import { cn, formatDate } from "@/app/utils/global";
+import { cn, formatDate } from "@/lib/utils";
 
 type TransactionsTableProps = {
   transactions: Transaction[];
@@ -22,12 +22,12 @@ const categoryIconMap: Record<string, JSX.Element> = {
 };
 
 const categoryColorMap: Record<string, string> = {
-  Groceries: "bg-blue-600/30 text-blue-400",
-  Transport: "bg-violet-600/30 text-violet-400",
-  House: "bg-orange-600/30 text-orange-400",
-  Health: "bg-red-600/30 text-red-400",
-  Job: "bg-green-600/30 text-green-400",
-  Free_Time: "bg-yellow-600/30 text-yellow-400",
+  Groceries: "bg-blue-600/20 text-blue-400",
+  Transport: "bg-violet-600/20 text-violet-400",
+  House: "bg-orange-600/20 text-orange-400",
+  Health: "bg-red-600/20 text-red-400",
+  Job: "bg-green-600/20 text-green-400",
+  Free_Time: "bg-yellow-600/20 text-yellow-400",
 };
 
 export default function TransactionsTable({
@@ -50,7 +50,7 @@ export default function TransactionsTable({
               <span
                 className={cn(
                   "p-2 rounded-lg",
-                  categoryColorMap[transaction.category]
+                  categoryColorMap[transaction.category],
                 )}
               >
                 {categoryIconMap[transaction.category] ?? (
@@ -63,14 +63,14 @@ export default function TransactionsTable({
               <span
                 className={cn(
                   "p-1.5 rounded-lg",
-                  categoryColorMap[transaction.category]
+                  categoryColorMap[transaction.category],
                 )}
               >
                 {transaction.category.replace("_", " ")}
               </span>
             </td>
             <td className="py-4 px-2 text-left text-zinc-500">
-              {formatDate(transaction.timestamp)}
+              {formatDate(transaction.date)}
             </td>
             <td
               className={`py-4 px-2 text-right font-semibold ${

@@ -1,7 +1,11 @@
 "use client";
 import { useState } from "react";
-import { Transaction, TransactionCategory, TransactionType } from "../types";
-import { cn } from "@/app/utils/global";
+import {
+  Transaction,
+  TransactionCategory,
+  TransactionType,
+} from "@/app/transactions/types";
+import { cn } from "@/lib/utils";
 //import { useRouter } from "next/router";
 import { useSearchParams } from "next/navigation";
 
@@ -50,7 +54,7 @@ TransactionFilterProps) {
             "px-2 py-1 text-center text-zinc-400 rounded-md hover:cursor-pointer hover:bg-zinc-700",
             filterProp === value
               ? "bg-linear-to-br from-primaryOrange from-30% to-primaryYellow text-zinc-50 font-semibold"
-              : ""
+              : "",
           )}
           onClick={() => setFilterProp(value)}
         >

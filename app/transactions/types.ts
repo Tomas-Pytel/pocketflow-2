@@ -10,7 +10,7 @@ type TransactionCategory =
 
 interface Transaction {
   id: number;
-  timestamp: Date;
+  date: Date;
   title: string;
   amount: number;
   type: TransactionType;
